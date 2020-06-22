@@ -1,0 +1,44 @@
+
+<div *ngIf="selectedTeacher">
+  <div class="container row">
+    <div class="mr-auto mt-2">
+      <app-title [title]="'Professor selecionado: ' + selectedTeacher.id"></app-title>
+    </div>
+    <div class="mt-2">
+      <button class="btn btn-info" (click)="backToList()">Voltar</button>
+    </div>
+  </div>
+  <hr>
+  <form>
+    <div class="form-group">
+      <label for="formGroupExampleInput">Nome</label>
+      <input type="text" value="{{selectedTeacher.firstname}}" class="form-control">
+    </div>
+    <div class="form-group">
+      <label for="formGroupExampleInput2">Disciplina</label>
+      <input type="text" value="{{selectedTeacher.subject}}" class="form-control">
+    </div>
+  </form>
+</div>
+<div class="mt-2" *ngIf="!selectedTeacher">
+  <app-title [title]="title"></app-title>
+  <hr>
+  <table class="table table-hover table-sm">
+    <thead class="thead-light">
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">Nome</th>
+        <th scope="col">Disciplina</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor='let teacher of teachers'
+      style="cursor: pointer;"
+      (click)="selectedRowFromTable(teacher)">
+        <th scope="row">{{teacher.id}}</th>
+        <td>{{teacher.firstname}}</td>
+        <td>{{teacher.subject}}</td>
+      </tr>
+    </tbody>
+  </table>
+</div>

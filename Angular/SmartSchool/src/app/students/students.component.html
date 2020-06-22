@@ -1,0 +1,59 @@
+
+<div *ngIf="selectedStudent">
+  <div class="container row">
+    <div class="mr-auto mt-2">
+      <app-title [title]="'Aluno selecionado: ' + selectedStudent.id"></app-title>
+    </div>
+    <div class="mt-2">
+      <button class="btn btn-info" (click)="backToList()">Voltar</button>
+    </div>
+  </div>
+  <hr>
+  <form>
+    <div class="form-group">
+      <label for="formGroupExampleInput">Nome</label>
+      <input type="text" value="{{selectedStudent.firstname}}" class="form-control">
+    </div>
+    <div class="form-group">
+      <label for="formGroupExampleInput2">Sobrenome</label>
+      <input type="text" value="{{selectedStudent.lastname}}" class="form-control">
+    </div>
+    <div class="form-group">
+      <label for="formGroupExampleInput2">Documento</label>
+      <input type="text" value="{{selectedStudent.document}}" class="form-control">
+    </div>
+    <div class="form-group">
+      <label for="formGroupExampleInput2">Telefone</label>
+      <input type="text" value="{{selectedStudent.phonenumber}}" class="form-control">
+    </div>
+    <div class="form-group">
+      <label for="formGroupExampleInput2">E-mail</label>
+      <input type="text" value="{{selectedStudent.email}}" class="form-control">
+    </div>
+  </form>
+</div>
+<div class="mt-2" *ngIf="!selectedStudent">
+  <app-title [title]="title"></app-title>
+  <hr>
+  <table class="table table-hover table-sm">
+    <thead class="thead-light">
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">Nome</th>
+        <th scope="col">Sobrenome</th>
+        <th scope="col">Email</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor='let student of students'
+      style="cursor: pointer;"
+      (click)="selectedRowFromTable(student)">
+        <th scope="row">{{student.id}}</th>
+        <td>{{student.firstname}}</td>
+        <td>{{student.lastname}}</td>
+        <td>{{student.email}}</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
