@@ -1,5 +1,7 @@
 import { Student } from './../models/Student';
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, TemplateRef } from '@angular/core';
+import { FormGroup, FormBuilder, Validators } from '@angular/forms';
+import { BsModalService, BsModalRef } from 'ngx-bootstrap/modal';
 
 @Component({
   selector: 'app-students',
@@ -8,7 +10,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class StudentsComponent implements OnInit {
 
+  public studentForm: FormGroup;
   public title = 'Lista de Alunos';
+  public selectedStudent: Student;
+  public modalReference: BsModalRef;
+  public modalConfig = {
+    animated: true
+  };
 
   public students = [
     { id: 1, firstname: 'Donald', lastname: 'Trump', phonenumber: '1111111111', document: '123.456.789-10', email: 'donald@smartschool.com'},
@@ -20,18 +28,38 @@ export class StudentsComponent implements OnInit {
     { id: 7, firstname: 'Gaginho', lastname: 'Pig', phonenumber: '7777777777', document: '692.390.012-16', email: 'gaginhopig@smartschool.com'},
   ];
 
-  public selectedStudent: Student;
-
-  selectedRowFromTable(student: Student){
-    this.selectedStudent = student;
+  constructor(private formBuilder: FormBuilder,
+              private modalService: BsModalService) {
+    this.createForm();
   }
-
-  backToList(){
-    this.selectedStudent = null;
-  }
-
-  constructor() { }
 
   ngOnInit() {
+  }
+
+  createForm() {
+    this.studentForm = this.formBuilder.group({
+      firstname: ['', Validators.required],
+      lastname: ['', Validators.required],
+      document: ['', Validators.required],
+      phonenumber: ['', Validators.required],
+      email: ['', Validators.required],
+    });
+  }
+
+  studentSubmit() {
+    console.log(this.studentForm.value);
+  }
+
+  selectedRowFromTable(student: Student) {
+    this.selectedStudent = student;
+    this.studentForm.patchValue(student);
+  }
+
+  openModal(template: TemplateRef<any>) {
+    this.modalReference = this.modalService.show(template, this.modalConfig);
+  }
+
+  backToList() {
+    this.selectedStudent = null;
   }
 }

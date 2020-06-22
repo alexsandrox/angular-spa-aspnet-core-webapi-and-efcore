@@ -1,44 +1,70 @@
-
-<div *ngIf="selectedTeacher">
-  <div class="container row">
-    <div class="mr-auto mt-2">
-      <app-title [title]="'Professor selecionado: ' + selectedTeacher.id"></app-title>
+<div class="row">
+  <div class="col-sm-5" *ngIf="selectedTeacher">
+    <div class="row">
+      <div class="mr-auto mt-2">
+        <app-title [title]="'Cód. Professor: ' + selectedTeacher.id"></app-title>
+      </div>
+      <div class="mt-2">
+        <button class="btn btn-outline-secondary" (click)="backToList()">Fechar</button>
+      </div>
     </div>
-    <div class="mt-2">
-      <button class="btn btn-info" (click)="backToList()">Voltar</button>
-    </div>
+    <hr>
+    <form [formGroup]="teacherForm" (submit)="teacherSubmit()">
+      <div class="form-group">
+        <label for="formGroupExampleInput">Nome</label>
+        <input formControlName="firstname" class="form-control">
+      </div>
+      <div class="form-group">
+        <label for="formGroupExampleInput">Sobrenome</label>
+        <input formControlName="lastname" class="form-control">
+      </div>
+      <div class="form-group">
+        <label for="formGroupExampleInput2">Disciplina</label>
+        <input formControlName="subject" class="form-control">
+      </div>
+      <div class="form-group">
+        <button class="btn btn-success" [disabled]="!teacherForm.valid">Submit</button>
+      </div>
+    </form>
   </div>
-  <hr>
-  <form>
-    <div class="form-group">
-      <label for="formGroupExampleInput">Nome</label>
-      <input type="text" value="{{selectedTeacher.firstname}}" class="form-control">
-    </div>
-    <div class="form-group">
-      <label for="formGroupExampleInput2">Disciplina</label>
-      <input type="text" value="{{selectedTeacher.subject}}" class="form-control">
-    </div>
-  </form>
+  <div class="mt-2" [ngClass]="{'col-sm-7': selectedTeacher, 'col-sm-12': !selectedTeacher}">
+    <app-title [title]="title"></app-title>
+    <hr>
+    <table class="table table-hover table-sm">
+      <thead class="thead-light">
+        <tr>
+          <th scope="col">#</th>
+          <th scope="col">Nome</th>
+          <th scope="col">Sobrenome</th>
+          <th scope="col">Disciplina</th>
+          <th scope="col">Opções</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor='let teacher of teachers'>
+          <th scope="row">{{teacher.id}}</th>
+          <td>{{teacher.firstname}}</td>
+          <td>{{teacher.lastname}}</td>
+          <td>{{teacher.subject}}</td>
+          <td>
+            <div class="btn-group">
+              <button (click)="selectedRowFromTable(teacher)" class="btn btn-sm btn-outline-info">Detalhe</button>
+              <button (click)="openModal(template)" class="text-dark btn btn-sm btn-outline-warning">Alunos</button>
+            </div>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
 </div>
-<div class="mt-2" *ngIf="!selectedTeacher">
-  <app-title [title]="title"></app-title>
-  <hr>
-  <table class="table table-hover table-sm">
-    <thead class="thead-light">
-      <tr>
-        <th scope="col">#</th>
-        <th scope="col">Nome</th>
-        <th scope="col">Disciplina</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr *ngFor='let teacher of teachers'
-      style="cursor: pointer;"
-      (click)="selectedRowFromTable(teacher)">
-        <th scope="row">{{teacher.id}}</th>
-        <td>{{teacher.firstname}}</td>
-        <td>{{teacher.subject}}</td>
-      </tr>
-    </tbody>
-  </table>
-</div>
+
+<ng-template #template>
+  <div class="modal-body">
+    Modal
+  </div>
+  <div class="modal-footer">
+    <button type="button" class="btn btn-outline-secondary pull-right" aria-label="Close" (click)="modalReference.hide()">
+      FECHAR
+    </button>
+  </div>
+</ng-template>
