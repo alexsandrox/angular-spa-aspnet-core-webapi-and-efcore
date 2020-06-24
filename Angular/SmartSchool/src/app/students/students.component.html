@@ -9,29 +9,69 @@
       </div>
     </div>
     <hr>
+
+
+
     <form [formGroup]="studentForm" (submit)="studentSubmit()">
       <div class="form-group">
         <label for="formGroupExampleInput">Nome</label>
-        <input formControlName="firstname" class="form-control">
+        <div class="input-group">
+          <div class="input-group-prepend">
+            <div class="input-group-text bg-white">
+              <i class="fas fa-user-circle"></i>
+            </div>
+          </div>
+          <input formControlName="firstname" class="form-control" minlength=3 maxlength=50>
+        </div>
       </div>
       <div class="form-group">
         <label for="formGroupExampleInput2">Sobrenome</label>
-        <input formControlName="lastname" class="form-control">
+        <div class="input-group">
+          <div class="input-group-prepend">
+            <div class="input-group-text bg-white">
+              <i class="fas fa-user-circle"></i>
+            </div>
+          </div>
+          <input formControlName="lastname" class="form-control" minlength=3 maxlength=50>
+        </div>
       </div>
       <div class="form-group">
         <label for="formGroupExampleInput2">Documento</label>
-        <input formControlName="document" class="form-control">
+        <div class="input-group">
+          <div class="input-group-prepend">
+            <div class="input-group-text bg-white">
+              <i class="fas fa-address-card"></i>
+            </div>
+          </div>
+          <input formControlName="document" class="form-control">
+        </div>
       </div>
       <div class="form-group">
-        <label for="formGroupExampleInput2">Telefone</label>
-        <input formControlName="phonenumber" class="form-control">
+        <label for="formGroupExampleInput2">WhatsApp</label>
+        <div class="input-group">
+          <div class="input-group-prepend">
+            <div class="input-group-text bg-white">
+              <i class="fas fa-phone-square"></i>
+            </div>
+          </div>
+          <input formControlName="phonenumber" class="form-control" mask="(00) 00000-0000">
+        </div>
       </div>
       <div class="form-group">
         <label for="formGroupExampleInput2">E-mail</label>
-        <input formControlName="email" class="form-control">
+        <div class="input-group">
+          <div class="input-group-prepend">
+            <div class="input-group-text bg-white">
+              <i class="fas fa-envelope"></i>
+            </div>
+          </div>
+          <input formControlName="email" class="form-control" type="email">
+        </div>
       </div>
       <div class="form-group">
-        <button class="btn btn-success" [disabled]="!studentForm.valid">Submit</button>
+        <button class="btn btn-success" [disabled]="!studentForm.valid">
+          <i class="fas fa-database"></i> Register
+        </button>
       </div>
     </form>
   </div>

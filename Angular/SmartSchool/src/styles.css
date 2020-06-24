@@ -1,2 +1,15 @@
 /* You can add global styles to this file, and also import other style files */
-@import '../node_modules/bootstrap/dist/css/bootstrap.min.css'
+@import '../node_modules/bootstrap/dist/css/bootstrap.min.css';
+
+/* .icon-color-valid {
+  border-color:  #28a745;
+  color: #28a745;
+  background-color: whitesmoke;
+}
+
+.icon-color-invalid {
+  border-color: #dc3545;
+  color: #dc3545;
+  background-color: whitesmoke;
+} */
+

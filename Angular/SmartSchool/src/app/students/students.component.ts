@@ -2,6 +2,7 @@ import { Student } from './../models/Student';
 import { Component, OnInit, TemplateRef } from '@angular/core';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { BsModalService, BsModalRef } from 'ngx-bootstrap/modal';
+import { NgxMaskModule, IConfig } from 'ngx-mask';
 
 @Component({
   selector: 'app-students',
@@ -38,11 +39,11 @@ export class StudentsComponent implements OnInit {
 
   createForm() {
     this.studentForm = this.formBuilder.group({
-      firstname: ['', Validators.required],
-      lastname: ['', Validators.required],
+      firstname: ['', [Validators.pattern(/[a-zA-Z ]+$/), Validators.required, Validators.minLength, Validators.maxLength]],
+      lastname: ['', [Validators.required, Validators.minLength, Validators.maxLength]],
       document: ['', Validators.required],
       phonenumber: ['', Validators.required],
-      email: ['', Validators.required],
+      email: ['', [Validators.required, Validators.pattern(/^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/)]],
     });
   }
 
