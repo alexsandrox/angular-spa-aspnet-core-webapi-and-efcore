@@ -1,4 +1,5 @@
 using System;
+using System.Collections.Generic;
 
 namespace SmartSchool_WebAPI.Models
 {
@@ -13,8 +14,8 @@ namespace SmartSchool_WebAPI.Models
             Document = document;
             Phonenumber = phonenumber;
             Email = email;
-            CreatedAt = DateTime.UtcNow;
-            UpdatedAt = DateTime.UtcNow;
+            CreatedAt = DateTime.UtcNow.ToLocalTime();
+            UpdatedAt = DateTime.UtcNow.ToLocalTime();
         }
 
         public string Id { get; private set; }
@@ -25,5 +26,8 @@ namespace SmartSchool_WebAPI.Models
         public string Email { get; private set; }
         public DateTime CreatedAt { get; private set; }
         public DateTime UpdatedAt { get; private set; }
+
+        // para fazer o relacionamento muitos para muitos
+        public IEnumerable<StudentSubject> StudentsSubjects { get; private set; }
     }
 }

@@ -1,3 +1,5 @@
+using System.Collections.Generic;
+
 namespace SmartSchool_WebAPI.Models
 {
     public class Subject
@@ -14,5 +16,8 @@ namespace SmartSchool_WebAPI.Models
         public string Name { get; private set; }
         public string TeacherId { get; private set; }
         public Teacher Teacher { get; private set; }
+
+        // para fazer o relacionamento muitos para muitos
+        public IEnumerable<StudentSubject> StudentsSubjects { get; private set; }
     }
 }

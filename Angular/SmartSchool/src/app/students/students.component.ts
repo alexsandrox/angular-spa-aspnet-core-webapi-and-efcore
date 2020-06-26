@@ -1,7 +1,7 @@
-import { Student } from './../models/Student';
 import { Component, OnInit, TemplateRef } from '@angular/core';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { BsModalService, BsModalRef } from 'ngx-bootstrap/modal';
+import { Student } from './../models/Student';
 
 @Component({
   selector: 'app-students',
@@ -19,13 +19,13 @@ export class StudentsComponent implements OnInit {
   };
 
   public students = [
-    { id: 1, firstname: 'Donald', lastname: 'Trump', phonenumber: '1111111111', document: '123.456.789-10', email: 'donald@smartschool.com'},
-    { id: 2, firstname: 'Mickey', lastname: 'Mouse', phonenumber: '2222222222', document: '321.654.987-11', email: 'mickey@smartschool.com'},
-    { id: 3, firstname: 'Pateta', lastname: 'patetâncio', phonenumber: '3333333333', document: '987.654.432-12', email: 'pateta@smartschool.com'},
-    { id: 4, firstname: 'Minie', lastname: 'Mouse', phonenumber: '4444444444', document: '654.321.987-13', email: 'minie@smartschool.com'},
-    { id: 5, firstname: 'Patinhas', lastname: 'Bilio', phonenumber: '5555555555', document: '123.987.456-14', email: 'patinhas@smartschool.com'},
-    { id: 6, firstname: 'Pernalonga', lastname: 'Champs', phonenumber: '8848459302', document: '879.543.672-15', email: 'pernalonga@smartschool.com'},
-    { id: 7, firstname: 'Gaginho', lastname: 'Pig', phonenumber: '7777777777', document: '692.390.012-16', email: 'gaginhopig@smartschool.com'},
+    { id: "72143DA8-799B-4962-A8AE-EF926FE299C5", firstname: 'Clark', lastname: 'Kent', phonenumber: '11933225555', document: '455.278.840-00', email: 'clarkkent@yahoo.com'},
+    { id: "0530841D-AA4A-4469-9F6D-8DD39C75BD51", firstname: 'Leon', lastname: 'Kennedy', phonenumber: '21999880033', document: '860.187.460-69', email: 'leonskennedy@hotmail.com'},
+    { id: "22E5557C-A61E-476F-A996-09FAB7DFF0AD", firstname: 'Bruce', lastname: 'Wayne', phonenumber: '47933442121', document: '730.648.440-08', email: 'brucewayne@gmail.com'},
+    { id: "B36F6B51-3F95-4B3E-95C0-19099A78E825", firstname: 'Tony', lastname: 'Stark', phonenumber: '1397674944', document: '704.332.760-10', email: 'stark@yahoo.com'},
+    { id: "B76B460B-3F15-4D71-9B31-1C0EFA20D0DE", firstname: 'Bruce', lastname: 'Benner', phonenumber: '45998877664', document: '819.391.990-42', email: 'hulk@hotmail.com'},
+    { id: "E8E0015B-1EB1-444C-AF78-C0DCDE508109", firstname: 'Scooby', lastname: 'Doo', phonenumber: '11945492790', document: '268.910.380-06', email: 'scooby@yahoo.com'},
+    { id: "B1FE8B94-1773-443A-9E04-52753571F3D3", firstname: 'Charlie', lastname: 'Brown', phonenumber: '34977553040', document: '236.780.220-30', email: 'charliebrown@hotmail.com'},
   ];
 
   constructor(private formBuilder: FormBuilder,

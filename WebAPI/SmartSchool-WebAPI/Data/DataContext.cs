@@ -20,11 +20,11 @@ namespace SmartSchool_WebAPI.Data
 
             builder.Entity<Teacher>()
                 .HasData(new List<Teacher>(){
-                    new Teacher("1", "Girafales", "Gonzales", "Aritmética"),
-                    new Teacher("2", "Pardal", "Voador", "Física"),
-                    new Teacher("3", "Raimundo", "Nonato", "Português"),
-                    new Teacher("4", "Alexsandro", "Andrade", "Informática"),
-                    new Teacher("5", "Gladys", "Moreno", "Culinária"),
+                    new Teacher("1", "Girafales", "Gonzales"),
+                    new Teacher("2", "Pardal", "Voador"),
+                    new Teacher("3", "Raimundo", "Nonato"),
+                    new Teacher("4", "Alexsandro", "Andrade"),
+                    new Teacher("5", "Gladys", "Moreno"),
                 });
             
             builder.Entity<Subject>()

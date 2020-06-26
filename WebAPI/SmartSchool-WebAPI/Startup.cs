@@ -1,8 +1,11 @@
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using SmartSchool_WebAPI.Data;
+using Microsoft.AspNetCore.Mvc.NewtonsoftJson;
 
 namespace SmartSchool_WebAPI
 {
@@ -18,7 +21,16 @@ namespace SmartSchool_WebAPI
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddControllers();
+            services.AddDbContext<DataContext>(
+                db => db.UseSqlite(Configuration.GetConnectionString("DefaultConnection"))
+            );
+
+            services.AddControllers()
+                    .AddNewtonsoftJson(option => option.SerializerSettings.ReferenceLoopHandling = 
+                    Newtonsoft.Json.ReferenceLoopHandling.Ignore);
+
+            // adicionar as depências do nosso repositório
+            services.AddScoped<IRepository, Repository>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -33,7 +45,7 @@ namespace SmartSchool_WebAPI
 
             app.UseRouting();
 
-            app.UseAuthorization();
+            // app.UseAuthorization();
 
             app.UseEndpoints(endpoints =>
             {

@@ -19,10 +19,11 @@ export class TeachersComponent implements OnInit {
   };
 
   public teachers = [
-    { id: 1, firstname: 'Girafales', lastname: 'Morales', subject: 'História'},
-    { id: 2, firstname: 'Pardal', lastname: 'Voador', subject: 'Geografia'},
-    { id: 3, firstname: 'Raimundo', lastname: 'Nonato', subject: 'Português'},
-    { id: 4, firstname: 'Jão', lastname: 'Neves', subject: 'Matemática'},
+    { id: "1", firstname: 'Girafales', lastname: 'Gonzales'},
+    { id: "2", firstname: 'Pardal', lastname: 'Voador'},
+    { id: "3", firstname: 'Raimundo', lastname: 'Nonato'},
+    { id: "4", firstname: 'Alexsandro', lastname: 'Andrade'},
+    { id: "5", firstname: 'Gladys', lastname: 'Moreno'},
   ];
 
   constructor(private formBuilder: FormBuilder,
