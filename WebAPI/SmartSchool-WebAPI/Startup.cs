@@ -6,6 +6,7 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using SmartSchool_WebAPI.Data;
 using Microsoft.AspNetCore.Mvc.NewtonsoftJson;
+using Newtonsoft.Json.Serialization;
 
 namespace SmartSchool_WebAPI
 {
@@ -26,8 +27,10 @@ namespace SmartSchool_WebAPI
             );
 
             services.AddControllers()
-                    .AddNewtonsoftJson(option => option.SerializerSettings.ReferenceLoopHandling = 
-                    Newtonsoft.Json.ReferenceLoopHandling.Ignore);
+                    .AddNewtonsoftJson(options => // evita erro no retorno de strings
+                    options.SerializerSettings.ReferenceLoopHandling = Newtonsoft.Json.ReferenceLoopHandling.Ignore)
+                    .AddNewtonsoftJson(options => // informa��es json aparecem com a letra inicial mai�scula
+                    options.SerializerSettings.ContractResolver = new DefaultContractResolver());
 
             // adicionar as depências do nosso repositório
             services.AddScoped<IRepository, Repository>();

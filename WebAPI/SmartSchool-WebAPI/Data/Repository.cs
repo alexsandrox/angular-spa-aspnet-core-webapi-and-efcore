@@ -87,7 +87,7 @@ namespace SmartSchool_WebAPI.Data
             return await query.ToArrayAsync();
         }
 
-        public async Task<Teacher[]> GetAllTeachersAsync(bool includeStudent)
+        public async Task<Teacher[]> GetAllTeachersAsync(bool includeStudent = true)
         {
             IQueryable<Teacher> query = _context.Teachers;
 
@@ -108,7 +108,9 @@ namespace SmartSchool_WebAPI.Data
 
             if (includeSubject)
             {
-                query = query.Include(p => p.Subjects);
+                query = query.Include(p => p.Subjects)
+                             .ThenInclude(ss => ss.StudentsSubjects)
+                             .ThenInclude(s => s.Student);
             }
 
             query = query.AsNoTracking()
