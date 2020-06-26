@@ -51,7 +51,7 @@ namespace SmartSchool_WebAPI.Data
             return await query.ToArrayAsync();
         }
 
-        public async Task<Student> GetStudentAsyncById(string studentId, bool includeSubject)
+        public async Task<Student> GetStudentAsyncById(int studentId, bool includeSubject)
         {
             IQueryable<Student> query = _context.Students;
 
@@ -69,7 +69,7 @@ namespace SmartSchool_WebAPI.Data
             return await query.FirstOrDefaultAsync();
         }
 
-        public async Task<Student[]> GetStudentsAsyncBySubjectId(string subjectId, bool includeSubject)
+        public async Task<Student[]> GetStudentsAsyncBySubjectId(int subjectId, bool includeSubject)
         {
             IQueryable<Student> query = _context.Students;
 
@@ -102,7 +102,7 @@ namespace SmartSchool_WebAPI.Data
             return await query.ToArrayAsync();
         }
 
-        public async Task<Teacher[]> GetTeachersAsyncByStudentId(string studentId, bool includeSubject)
+        public async Task<Teacher[]> GetTeachersAsyncByStudentId(int studentId, bool includeSubject)
         {
             IQueryable<Teacher> query = _context.Teachers;
 
@@ -119,7 +119,7 @@ namespace SmartSchool_WebAPI.Data
             return await query.ToArrayAsync();
         }
 
-        public async Task<Teacher> GetTeacherAsyncById(string teacherId, bool includeStudent)
+        public async Task<Teacher> GetTeacherAsyncById(int teacherId, bool includeStudent)
         {
             IQueryable<Teacher> query = _context.Teachers;
 

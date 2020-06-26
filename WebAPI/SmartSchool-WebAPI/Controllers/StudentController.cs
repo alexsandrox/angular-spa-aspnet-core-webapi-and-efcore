@@ -17,7 +17,7 @@ namespace SmartSchool_WebAPI.Controllers
         }
 
         [HttpGet]
-        [Route("v1/students")]
+        [Route("v1/student")]
         public async Task<IActionResult> Get() 
         {
             try
@@ -34,12 +34,12 @@ namespace SmartSchool_WebAPI.Controllers
         }
         
         [HttpGet]
-        [Route("v1/students/{id}")]
-        public async Task<IActionResult> Get(string studentId) 
+        [Route("v1/student/{id:int}")]
+        public async Task<IActionResult> Get(int id) 
         {
             try
             {
-                var result = await _repository.GetStudentAsyncById(studentId, true);
+                var result = await _repository.GetStudentAsyncById(id, true);
                 return Ok(result);
             }
             catch (Exception)
@@ -51,12 +51,12 @@ namespace SmartSchool_WebAPI.Controllers
 
                 
         [HttpGet]
-        [Route("v1/students/subject/{id}")]
-        public async Task<IActionResult> GetSubject(string subjectId) 
+        [Route("v1/student/subject/{id:int}")]
+        public async Task<IActionResult> GetSubject(int id) 
         {
             try
             {
-                var result = await _repository.GetStudentsAsyncBySubjectId(subjectId, true);
+                var result = await _repository.GetStudentsAsyncBySubjectId(id, true);
                 return Ok(result);
             }
             catch (Exception)

@@ -5,14 +5,14 @@ namespace SmartSchool_WebAPI.Models
     public class Subject
     {
         protected Subject() { }
-        public Subject(string id, string name, string teacherId)
+        public Subject(int id, string name, string teacherId)
         {
             this.Id = id;
             this.Name = name;
             this.TeacherId = teacherId;
         }
 
-        public string Id { get; private set; }
+        public int Id { get; private set; }
         public string Name { get; private set; }
         public string TeacherId { get; private set; }
         public Teacher Teacher { get; private set; }

@@ -13,12 +13,12 @@ namespace SmartSchool_WebAPI.Data
 
         //ALUNO
         Task<Student[]> GetAllStudentsAsync(bool includeTeacher);        
-        Task<Student> GetStudentAsyncById(string studentId, bool includeTeacher);
-        Task<Student[]> GetStudentsAsyncBySubjectId(string subjectId, bool includeSubject);
+        Task<Student> GetStudentAsyncById(int studentId, bool includeTeacher);
+        Task<Student[]> GetStudentsAsyncBySubjectId(int subjectId, bool includeSubject);
         
         //PROFESSOR
         Task<Teacher[]> GetAllTeachersAsync(bool includeStudent);
-        Task<Teacher> GetTeacherAsyncById(string teacherId, bool includeStudent);
-        Task<Teacher[]> GetTeachersAsyncByStudentId(string studentId, bool includeSubject);
+        Task<Teacher> GetTeacherAsyncById(int teacherId, bool includeStudent);
+        Task<Teacher[]> GetTeachersAsyncByStudentId(int studentId, bool includeSubject);
     }
 }

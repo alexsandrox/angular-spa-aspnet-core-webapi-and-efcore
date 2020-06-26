@@ -6,7 +6,7 @@ namespace SmartSchool_WebAPI.Models
     public class Student
     {
         protected Student() { }
-        public Student(string id, string firstName, string lastName, string document, string phonenumber, string email)
+        public Student(int id, string firstName, string lastName, string document, string phonenumber, string email)
         {
             Id = id;
             FirstName = firstName;
@@ -18,7 +18,7 @@ namespace SmartSchool_WebAPI.Models
             UpdatedAt = DateTime.UtcNow.ToLocalTime();
         }
 
-        public string Id { get; private set; }
+        public int Id { get; private set; }
         public string FirstName { get; private set; }
         public string LastName { get; private set; }
         public string Document { get; private set; }

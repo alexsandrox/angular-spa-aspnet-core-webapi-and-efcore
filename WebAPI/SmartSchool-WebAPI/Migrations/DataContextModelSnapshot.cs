@@ -18,8 +18,9 @@ namespace SmartSchool_WebAPI.Migrations
 
             modelBuilder.Entity("SmartSchool_WebAPI.Models.Student", b =>
                 {
-                    b.Property<string>("Id")
-                        .HasColumnType("TEXT");
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("INTEGER");
 
                     b.Property<DateTime>("CreatedAt")
                         .HasColumnType("TEXT");
@@ -49,90 +50,90 @@ namespace SmartSchool_WebAPI.Migrations
                     b.HasData(
                         new
                         {
-                            Id = "72143DA8-799B-4962-A8AE-EF926FE299C5",
-                            CreatedAt = new DateTime(2020, 6, 25, 19, 21, 42, 606, DateTimeKind.Local).AddTicks(7613),
+                            Id = 1,
+                            CreatedAt = new DateTime(2020, 6, 26, 4, 15, 21, 479, DateTimeKind.Local).AddTicks(6816),
                             Document = "455.278.840-00",
                             Email = "clarkkent@yahoo.com",
                             FirstName = "Clark",
                             LastName = "Kent",
                             Phonenumber = "11933225555",
-                            UpdatedAt = new DateTime(2020, 6, 25, 19, 21, 42, 611, DateTimeKind.Local).AddTicks(4921)
+                            UpdatedAt = new DateTime(2020, 6, 26, 4, 15, 21, 484, DateTimeKind.Local).AddTicks(2140)
                         },
                         new
                         {
-                            Id = "0530841D-AA4A-4469-9F6D-8DD39C75BD51",
-                            CreatedAt = new DateTime(2020, 6, 25, 19, 21, 42, 611, DateTimeKind.Local).AddTicks(6099),
+                            Id = 2,
+                            CreatedAt = new DateTime(2020, 6, 26, 4, 15, 21, 484, DateTimeKind.Local).AddTicks(3031),
                             Document = "860.187.460-69",
                             Email = "leonskennedy@hotmail.com",
                             FirstName = "Leon",
                             LastName = "Kennedy",
                             Phonenumber = "21999880033",
-                            UpdatedAt = new DateTime(2020, 6, 25, 19, 21, 42, 611, DateTimeKind.Local).AddTicks(6124)
+                            UpdatedAt = new DateTime(2020, 6, 26, 4, 15, 21, 484, DateTimeKind.Local).AddTicks(3063)
                         },
                         new
                         {
-                            Id = "22E5557C-A61E-476F-A996-09FAB7DFF0AD",
-                            CreatedAt = new DateTime(2020, 6, 25, 19, 21, 42, 611, DateTimeKind.Local).AddTicks(6137),
+                            Id = 3,
+                            CreatedAt = new DateTime(2020, 6, 26, 4, 15, 21, 484, DateTimeKind.Local).AddTicks(3098),
                             Document = "730.648.440-08",
                             Email = "brucewayne@gmail.com",
                             FirstName = "Bruce",
                             LastName = "Wayne",
                             Phonenumber = "47933442121",
-                            UpdatedAt = new DateTime(2020, 6, 25, 19, 21, 42, 611, DateTimeKind.Local).AddTicks(6141)
+                            UpdatedAt = new DateTime(2020, 6, 26, 4, 15, 21, 484, DateTimeKind.Local).AddTicks(3103)
                         },
                         new
                         {
-                            Id = "B36F6B51-3F95-4B3E-95C0-19099A78E825",
-                            CreatedAt = new DateTime(2020, 6, 25, 19, 21, 42, 611, DateTimeKind.Local).AddTicks(6145),
+                            Id = 4,
+                            CreatedAt = new DateTime(2020, 6, 26, 4, 15, 21, 484, DateTimeKind.Local).AddTicks(3107),
                             Document = "704.332.760-10",
                             Email = "stark@yahoo.com",
                             FirstName = "Tony",
                             LastName = "Stark",
                             Phonenumber = "1397674944",
-                            UpdatedAt = new DateTime(2020, 6, 25, 19, 21, 42, 611, DateTimeKind.Local).AddTicks(6148)
+                            UpdatedAt = new DateTime(2020, 6, 26, 4, 15, 21, 484, DateTimeKind.Local).AddTicks(3110)
                         },
                         new
                         {
-                            Id = "B76B460B-3F15-4D71-9B31-1C0EFA20D0DE",
-                            CreatedAt = new DateTime(2020, 6, 25, 19, 21, 42, 611, DateTimeKind.Local).AddTicks(6151),
+                            Id = 5,
+                            CreatedAt = new DateTime(2020, 6, 26, 4, 15, 21, 484, DateTimeKind.Local).AddTicks(3114),
                             Document = "819.391.990-42",
                             Email = "hulk@hotmail.com",
                             FirstName = "Bruce",
                             LastName = "Benner",
                             Phonenumber = "45998877664",
-                            UpdatedAt = new DateTime(2020, 6, 25, 19, 21, 42, 611, DateTimeKind.Local).AddTicks(6154)
+                            UpdatedAt = new DateTime(2020, 6, 26, 4, 15, 21, 484, DateTimeKind.Local).AddTicks(3117)
                         },
                         new
                         {
-                            Id = "E8E0015B-1EB1-444C-AF78-C0DCDE508109",
-                            CreatedAt = new DateTime(2020, 6, 25, 19, 21, 42, 611, DateTimeKind.Local).AddTicks(6164),
+                            Id = 6,
+                            CreatedAt = new DateTime(2020, 6, 26, 4, 15, 21, 484, DateTimeKind.Local).AddTicks(3128),
                             Document = "268.910.380-06",
                             Email = "scooby@yahoo.com",
                             FirstName = "Scooby",
                             LastName = "Doo",
                             Phonenumber = "11945492790",
-                            UpdatedAt = new DateTime(2020, 6, 25, 19, 21, 42, 611, DateTimeKind.Local).AddTicks(6166)
+                            UpdatedAt = new DateTime(2020, 6, 26, 4, 15, 21, 484, DateTimeKind.Local).AddTicks(3132)
                         },
                         new
                         {
-                            Id = "B1FE8B94-1773-443A-9E04-52753571F3D3",
-                            CreatedAt = new DateTime(2020, 6, 25, 19, 21, 42, 611, DateTimeKind.Local).AddTicks(6169),
+                            Id = 7,
+                            CreatedAt = new DateTime(2020, 6, 26, 4, 15, 21, 484, DateTimeKind.Local).AddTicks(3137),
                             Document = "236.780.220-30",
                             Email = "charliebrown@hotmail.com",
                             FirstName = "Charlie",
                             LastName = "Brown",
                             Phonenumber = "34977553040",
-                            UpdatedAt = new DateTime(2020, 6, 25, 19, 21, 42, 611, DateTimeKind.Local).AddTicks(6172)
+                            UpdatedAt = new DateTime(2020, 6, 26, 4, 15, 21, 484, DateTimeKind.Local).AddTicks(3140)
                         });
                 });
 
             modelBuilder.Entity("SmartSchool_WebAPI.Models.StudentSubject", b =>
                 {
-                    b.Property<string>("StudentId")
-                        .HasColumnType("TEXT");
+                    b.Property<int>("StudentId")
+                        .HasColumnType("INTEGER");
 
-                    b.Property<string>("SubjectId")
-                        .HasColumnType("TEXT");
+                    b.Property<int>("SubjectId")
+                        .HasColumnType("INTEGER");
 
                     b.HasKey("StudentId", "SubjectId");
 
@@ -143,115 +144,126 @@ namespace SmartSchool_WebAPI.Migrations
                     b.HasData(
                         new
                         {
-                            StudentId = "72143DA8-799B-4962-A8AE-EF926FE299C5",
-                            SubjectId = "2"
+                            StudentId = 1,
+                            SubjectId = 2
                         },
                         new
                         {
-                            StudentId = "72143DA8-799B-4962-A8AE-EF926FE299C5",
-                            SubjectId = "4"
+                            StudentId = 1,
+                            SubjectId = 4
                         },
                         new
                         {
-                            StudentId = "72143DA8-799B-4962-A8AE-EF926FE299C5",
-                            SubjectId = "5"
+                            StudentId = 1,
+                            SubjectId = 5
                         },
                         new
                         {
-                            StudentId = "0530841D-AA4A-4469-9F6D-8DD39C75BD51",
-                            SubjectId = "1"
+                            StudentId = 2,
+                            SubjectId = 1
                         },
                         new
                         {
-                            StudentId = "0530841D-AA4A-4469-9F6D-8DD39C75BD51",
-                            SubjectId = "2"
+                            StudentId = 2,
+                            SubjectId = 2
                         },
                         new
                         {
-                            StudentId = "0530841D-AA4A-4469-9F6D-8DD39C75BD51",
-                            SubjectId = "5"
+                            StudentId = 2,
+                            SubjectId = 5
                         },
                         new
                         {
-                            StudentId = "22E5557C-A61E-476F-A996-09FAB7DFF0AD",
-                            SubjectId = "1"
+                            StudentId = 3,
+                            SubjectId = 1
                         },
                         new
                         {
-                            StudentId = "22E5557C-A61E-476F-A996-09FAB7DFF0AD",
-                            SubjectId = "2"
+                            StudentId = 3,
+                            SubjectId = 2
                         },
                         new
                         {
-                            StudentId = "22E5557C-A61E-476F-A996-09FAB7DFF0AD",
-                            SubjectId = "3"
+                            StudentId = 3,
+                            SubjectId = 3
                         },
                         new
                         {
-                            StudentId = "B36F6B51-3F95-4B3E-95C0-19099A78E825",
-                            SubjectId = "1"
+                            StudentId = 4,
+                            SubjectId = 1
                         },
                         new
                         {
-                            StudentId = "B36F6B51-3F95-4B3E-95C0-19099A78E825",
-                            SubjectId = "4"
+                            StudentId = 4,
+                            SubjectId = 4
                         },
                         new
                         {
-                            StudentId = "B36F6B51-3F95-4B3E-95C0-19099A78E825",
-                            SubjectId = "5"
+                            StudentId = 4,
+                            SubjectId = 5
                         },
                         new
                         {
-                            StudentId = "B76B460B-3F15-4D71-9B31-1C0EFA20D0DE",
-                            SubjectId = "4"
+                            StudentId = 5,
+                            SubjectId = 4
                         },
                         new
                         {
-                            StudentId = "B76B460B-3F15-4D71-9B31-1C0EFA20D0DE",
-                            SubjectId = "5"
+                            StudentId = 5,
+                            SubjectId = 5
                         },
                         new
                         {
-                            StudentId = "B76B460B-3F15-4D71-9B31-1C0EFA20D0DE",
-                            SubjectId = "1"
+                            StudentId = 6,
+                            SubjectId = 1
                         },
                         new
                         {
-                            StudentId = "E8E0015B-1EB1-444C-AF78-C0DCDE508109",
-                            SubjectId = "2"
+                            StudentId = 6,
+                            SubjectId = 2
                         },
                         new
                         {
-                            StudentId = "E8E0015B-1EB1-444C-AF78-C0DCDE508109",
-                            SubjectId = "3"
+                            StudentId = 6,
+                            SubjectId = 3
                         },
                         new
                         {
-                            StudentId = "E8E0015B-1EB1-444C-AF78-C0DCDE508109",
-                            SubjectId = "4"
+                            StudentId = 6,
+                            SubjectId = 4
                         },
                         new
                         {
-                            StudentId = "B1FE8B94-1773-443A-9E04-52753571F3D3",
-                            SubjectId = "1"
+                            StudentId = 7,
+                            SubjectId = 1
                         },
                         new
                         {
-                            StudentId = "B1FE8B94-1773-443A-9E04-52753571F3D3",
-                            SubjectId = "3"
+                            StudentId = 7,
+                            SubjectId = 2
                         },
                         new
                         {
-                            StudentId = "B1FE8B94-1773-443A-9E04-52753571F3D3",
-                            SubjectId = "4"
+                            StudentId = 7,
+                            SubjectId = 3
+                        },
+                        new
+                        {
+                            StudentId = 7,
+                            SubjectId = 4
+                        },
+                        new
+                        {
+                            StudentId = 7,
+                            SubjectId = 5
                         });
                 });
 
             modelBuilder.Entity("SmartSchool_WebAPI.Models.Subject", b =>
                 {
-                    b.Property<string>("Id")
-                        .HasColumnType("TEXT");
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("INTEGER");
 
                     b.Property<string>("Name")
                         .HasColumnType("TEXT");
@@ -259,40 +271,43 @@ namespace SmartSchool_WebAPI.Migrations
                     b.Property<string>("TeacherId")
                         .HasColumnType("TEXT");
 
+                    b.Property<int?>("TeacherId1")
+                        .HasColumnType("INTEGER");
+
                     b.HasKey("Id");
 
-                    b.HasIndex("TeacherId");
+                    b.HasIndex("TeacherId1");
 
                     b.ToTable("Subjects");
 
                     b.HasData(
                         new
                         {
-                            Id = "1",
+                            Id = 1,
                             Name = "Aritmética",
                             TeacherId = "1"
                         },
                         new
                         {
-                            Id = "2",
+                            Id = 2,
                             Name = "Física",
                             TeacherId = "2"
                         },
                         new
                         {
-                            Id = "3",
+                            Id = 3,
                             Name = "Português",
                             TeacherId = "3"
                         },
                         new
                         {
-                            Id = "4",
+                            Id = 4,
                             Name = "Informática",
                             TeacherId = "4"
                         },
                         new
                         {
-                            Id = "5",
+                            Id = 5,
                             Name = "Culinária",
                             TeacherId = "5"
                         });
@@ -300,8 +315,9 @@ namespace SmartSchool_WebAPI.Migrations
 
             modelBuilder.Entity("SmartSchool_WebAPI.Models.Teacher", b =>
                 {
-                    b.Property<string>("Id")
-                        .HasColumnType("TEXT");
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("INTEGER");
 
                     b.Property<string>("FirstName")
                         .HasColumnType("TEXT");
@@ -316,31 +332,31 @@ namespace SmartSchool_WebAPI.Migrations
                     b.HasData(
                         new
                         {
-                            Id = "1",
+                            Id = 1,
                             FirstName = "Girafales",
                             LastName = "Gonzales"
                         },
                         new
                         {
-                            Id = "2",
+                            Id = 2,
                             FirstName = "Pardal",
                             LastName = "Voador"
                         },
                         new
                         {
-                            Id = "3",
+                            Id = 3,
                             FirstName = "Raimundo",
                             LastName = "Nonato"
                         },
                         new
                         {
-                            Id = "4",
+                            Id = 4,
                             FirstName = "Alexsandro",
                             LastName = "Andrade"
                         },
                         new
                         {
-                            Id = "5",
+                            Id = 5,
                             FirstName = "Gladys",
                             LastName = "Moreno"
                         });
@@ -365,7 +381,7 @@ namespace SmartSchool_WebAPI.Migrations
                 {
                     b.HasOne("SmartSchool_WebAPI.Models.Teacher", "Teacher")
                         .WithMany("Subjects")
-                        .HasForeignKey("TeacherId");
+                        .HasForeignKey("TeacherId1");
                 });
 #pragma warning restore 612, 618
         }
