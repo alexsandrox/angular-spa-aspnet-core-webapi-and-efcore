@@ -10,6 +10,7 @@ namespace SmartSchool_WebAPI.Models
             Id = id;
             FirstName = firstName;
             LastName = lastName;
+            Subjects = new List<Subject>();
         }
 
         public int Id { get; private set; }

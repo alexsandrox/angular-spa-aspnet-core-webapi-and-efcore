@@ -6,8 +6,8 @@ namespace SmartSchool_WebAPI.Data
 {
     public class DataContext : DbContext
     {
-        public DataContext(DbContextOptions<DataContext> options) : base (options) { }    
-            
+        public DataContext(DbContextOptions<DataContext> options) : base (options) { }
+
         public DbSet<Student> Students { get; set; }
         public DbSet<Teacher> Teachers { get; set; }
         public DbSet<Subject> Subjects { get; set; }
@@ -40,11 +40,11 @@ namespace SmartSchool_WebAPI.Data
             
             builder.Entity<Subject>()
                 .HasData(new List<Subject>{
-                    new Subject(1, "Aritmética", "1"),
-                    new Subject(2, "Física", "2"),
-                    new Subject(3, "Português", "3"),
-                    new Subject(4, "Informática", "4"),
-                    new Subject(5, "Culinária", "5")
+                    new Subject(1, "Aritmética", 1),
+                    new Subject(2, "Física", 2),
+                    new Subject(3, "Português", 3),
+                    new Subject(4, "Informática", 4),
+                    new Subject(5, "Culinária", 5)
                 });
 
             builder.Entity<StudentSubject>()

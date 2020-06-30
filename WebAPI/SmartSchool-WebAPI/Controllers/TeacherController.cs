@@ -1,8 +1,8 @@
-using System.Threading.Tasks;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
-using SmartSchool_WebAPI.Data;
 using SmartSchool_WebAPI.Models;
+using SmartSchool_WebAPI.Repositories;
+using System.Threading.Tasks;
 
 namespace SmartSchool_WebAPI.Controllers
 {
@@ -17,16 +17,14 @@ namespace SmartSchool_WebAPI.Controllers
         }
 
         [HttpGet]
-        [Route("v1/[controller]")]
+        [Route("v1/teacher")]
         public async Task<IActionResult> Get() 
         {
             try
             {
-                var teacher = await _repository.GetAllTeachersAsync(true);
+                var result = await _repository.GetAllTeachersAsync(true);
 
-                if(teacher == null) return NotFound("Não foi encontrado nenhum professor em nosso sistema de banco d dados");
-
-                return Ok(teacher);
+                return Ok(result);
             }
             catch (System.Exception)
             {
@@ -35,14 +33,12 @@ namespace SmartSchool_WebAPI.Controllers
         }
 
         [HttpGet]
-        [Route("v1/[controller]/{id:int}")]
+        [Route("v1/teacher/{id:int}")]
         public async Task<IActionResult> Get(int id)
         {
             try
             {
                 var teacher = await _repository.GetTeacherAsyncById(id, true);
-
-                if(teacher == null) return NotFound("Não foi encontrado nenhum aluno em nosso sistema com o id informado: " + id);
 
                 return Ok(teacher);
             }
@@ -53,16 +49,13 @@ namespace SmartSchool_WebAPI.Controllers
         }
 
         [HttpGet]
-        [Route("v1/[controller]/student/{id:int}")]
+        [Route("v1/teacher/student/{id:int}")]
         public async Task<IActionResult> GetStudent(int id)
         {
             try
             {
-                var student = await _repository.GetTeachersAsyncByStudentId(id, true);
-
-                if(student == null) return NotFound("Não foi encontrado nenhum aluno em nosso sistema com o id informado: " + id);
-
-                return Ok(student);
+                var result = await _repository.GetTeachersAsyncByStudentId(id, false);
+                return Ok(result);
             }
             catch (System.Exception)
             {
@@ -71,8 +64,8 @@ namespace SmartSchool_WebAPI.Controllers
         }
 
         [HttpPost]
-        [Route("v1/[controller]/register")]
-        public async Task<IActionResult> Post([FromBody] Teacher model)
+        [Route("v1/teacher/register")]
+        public async Task<IActionResult> Post(Teacher model)
         {
             try
             {
@@ -89,14 +82,14 @@ namespace SmartSchool_WebAPI.Controllers
         }
 
         [HttpPut]
-        [Route("v1/[controller]/update/{id:int}")]
+        [Route("v1/teacher/update/{id:int}")]
         public async Task<IActionResult> Put(int id, Teacher model)
         {
             try
             {
                 var teacher = await _repository.GetTeacherAsyncById(id, false);
 
-                if(teacher == null) return NotFound("Não foi encontrado nenhum aluno em nosso sistema com o id informado: " + id);
+                if(teacher == null) return NotFound("Não foi encontrado nenhum professor em nosso sistema com o id informado: " + id);
 
                 _repository.Update(model);
 
@@ -111,14 +104,14 @@ namespace SmartSchool_WebAPI.Controllers
         }
 
         [HttpDelete]
-        [Route("v1/[controller]/delete/{id:int}")]
+        [Route("v1/teacher/delete/{id:int}")]
         public async Task<IActionResult> Delete(int id)
         {
             try
             {
                 var teacher = await _repository.GetTeacherAsyncById(id, false);
 
-                if(teacher == null) return NotFound("Não foi encontrado nenhum aluno em nosso sistema com o id informado: " + id);
+                if(teacher == null) return NotFound("Não foi encontrado nenhum professor em nosso sistema com o id informado: " + id);
 
                 _repository.Delete(teacher);
 

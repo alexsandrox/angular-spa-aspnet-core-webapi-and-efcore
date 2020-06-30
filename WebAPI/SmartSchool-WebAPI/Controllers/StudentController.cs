@@ -1,9 +1,9 @@
-using System;
-using System.Threading.Tasks;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
-using SmartSchool_WebAPI.Data;
 using SmartSchool_WebAPI.Models;
+using SmartSchool_WebAPI.Repositories;
+using System;
+using System.Threading.Tasks;
 
 namespace SmartSchool_WebAPI.Controllers
 {

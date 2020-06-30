@@ -51,79 +51,79 @@ namespace SmartSchool_WebAPI.Migrations
                         new
                         {
                             Id = 1,
-                            CreatedAt = new DateTime(2020, 6, 26, 4, 15, 21, 479, DateTimeKind.Local).AddTicks(6816),
+                            CreatedAt = new DateTime(2020, 6, 27, 20, 23, 37, 969, DateTimeKind.Local).AddTicks(2630),
                             Document = "455.278.840-00",
                             Email = "clarkkent@yahoo.com",
                             FirstName = "Clark",
                             LastName = "Kent",
                             Phonenumber = "11933225555",
-                            UpdatedAt = new DateTime(2020, 6, 26, 4, 15, 21, 484, DateTimeKind.Local).AddTicks(2140)
+                            UpdatedAt = new DateTime(2020, 6, 27, 20, 23, 37, 973, DateTimeKind.Local).AddTicks(2292)
                         },
                         new
                         {
                             Id = 2,
-                            CreatedAt = new DateTime(2020, 6, 26, 4, 15, 21, 484, DateTimeKind.Local).AddTicks(3031),
+                            CreatedAt = new DateTime(2020, 6, 27, 20, 23, 37, 973, DateTimeKind.Local).AddTicks(2931),
                             Document = "860.187.460-69",
                             Email = "leonskennedy@hotmail.com",
                             FirstName = "Leon",
                             LastName = "Kennedy",
                             Phonenumber = "21999880033",
-                            UpdatedAt = new DateTime(2020, 6, 26, 4, 15, 21, 484, DateTimeKind.Local).AddTicks(3063)
+                            UpdatedAt = new DateTime(2020, 6, 27, 20, 23, 37, 973, DateTimeKind.Local).AddTicks(2955)
                         },
                         new
                         {
                             Id = 3,
-                            CreatedAt = new DateTime(2020, 6, 26, 4, 15, 21, 484, DateTimeKind.Local).AddTicks(3098),
+                            CreatedAt = new DateTime(2020, 6, 27, 20, 23, 37, 973, DateTimeKind.Local).AddTicks(2974),
                             Document = "730.648.440-08",
                             Email = "brucewayne@gmail.com",
                             FirstName = "Bruce",
                             LastName = "Wayne",
                             Phonenumber = "47933442121",
-                            UpdatedAt = new DateTime(2020, 6, 26, 4, 15, 21, 484, DateTimeKind.Local).AddTicks(3103)
+                            UpdatedAt = new DateTime(2020, 6, 27, 20, 23, 37, 973, DateTimeKind.Local).AddTicks(2977)
                         },
                         new
                         {
                             Id = 4,
-                            CreatedAt = new DateTime(2020, 6, 26, 4, 15, 21, 484, DateTimeKind.Local).AddTicks(3107),
+                            CreatedAt = new DateTime(2020, 6, 27, 20, 23, 37, 973, DateTimeKind.Local).AddTicks(2981),
                             Document = "704.332.760-10",
                             Email = "stark@yahoo.com",
                             FirstName = "Tony",
                             LastName = "Stark",
                             Phonenumber = "1397674944",
-                            UpdatedAt = new DateTime(2020, 6, 26, 4, 15, 21, 484, DateTimeKind.Local).AddTicks(3110)
+                            UpdatedAt = new DateTime(2020, 6, 27, 20, 23, 37, 973, DateTimeKind.Local).AddTicks(2983)
                         },
                         new
                         {
                             Id = 5,
-                            CreatedAt = new DateTime(2020, 6, 26, 4, 15, 21, 484, DateTimeKind.Local).AddTicks(3114),
+                            CreatedAt = new DateTime(2020, 6, 27, 20, 23, 37, 973, DateTimeKind.Local).AddTicks(2986),
                             Document = "819.391.990-42",
                             Email = "hulk@hotmail.com",
                             FirstName = "Bruce",
                             LastName = "Benner",
                             Phonenumber = "45998877664",
-                            UpdatedAt = new DateTime(2020, 6, 26, 4, 15, 21, 484, DateTimeKind.Local).AddTicks(3117)
+                            UpdatedAt = new DateTime(2020, 6, 27, 20, 23, 37, 973, DateTimeKind.Local).AddTicks(2988)
                         },
                         new
                         {
                             Id = 6,
-                            CreatedAt = new DateTime(2020, 6, 26, 4, 15, 21, 484, DateTimeKind.Local).AddTicks(3128),
+                            CreatedAt = new DateTime(2020, 6, 27, 20, 23, 37, 973, DateTimeKind.Local).AddTicks(2995),
                             Document = "268.910.380-06",
                             Email = "scooby@yahoo.com",
                             FirstName = "Scooby",
                             LastName = "Doo",
                             Phonenumber = "11945492790",
-                            UpdatedAt = new DateTime(2020, 6, 26, 4, 15, 21, 484, DateTimeKind.Local).AddTicks(3132)
+                            UpdatedAt = new DateTime(2020, 6, 27, 20, 23, 37, 973, DateTimeKind.Local).AddTicks(2997)
                         },
                         new
                         {
                             Id = 7,
-                            CreatedAt = new DateTime(2020, 6, 26, 4, 15, 21, 484, DateTimeKind.Local).AddTicks(3137),
+                            CreatedAt = new DateTime(2020, 6, 27, 20, 23, 37, 973, DateTimeKind.Local).AddTicks(3000),
                             Document = "236.780.220-30",
                             Email = "charliebrown@hotmail.com",
                             FirstName = "Charlie",
                             LastName = "Brown",
                             Phonenumber = "34977553040",
-                            UpdatedAt = new DateTime(2020, 6, 26, 4, 15, 21, 484, DateTimeKind.Local).AddTicks(3140)
+                            UpdatedAt = new DateTime(2020, 6, 27, 20, 23, 37, 973, DateTimeKind.Local).AddTicks(3002)
                         });
                 });
 
@@ -268,15 +268,12 @@ namespace SmartSchool_WebAPI.Migrations
                     b.Property<string>("Name")
                         .HasColumnType("TEXT");
 
-                    b.Property<string>("TeacherId")
-                        .HasColumnType("TEXT");
-
-                    b.Property<int?>("TeacherId1")
+                    b.Property<int>("TeacherId")
                         .HasColumnType("INTEGER");
 
                     b.HasKey("Id");
 
-                    b.HasIndex("TeacherId1");
+                    b.HasIndex("TeacherId");
 
                     b.ToTable("Subjects");
 
@@ -285,31 +282,31 @@ namespace SmartSchool_WebAPI.Migrations
                         {
                             Id = 1,
                             Name = "Aritmética",
-                            TeacherId = "1"
+                            TeacherId = 1
                         },
                         new
                         {
                             Id = 2,
                             Name = "Física",
-                            TeacherId = "2"
+                            TeacherId = 2
                         },
                         new
                         {
                             Id = 3,
                             Name = "Português",
-                            TeacherId = "3"
+                            TeacherId = 3
                         },
                         new
                         {
                             Id = 4,
                             Name = "Informática",
-                            TeacherId = "4"
+                            TeacherId = 4
                         },
                         new
                         {
                             Id = 5,
                             Name = "Culinária",
-                            TeacherId = "5"
+                            TeacherId = 5
                         });
                 });
 
@@ -381,7 +378,9 @@ namespace SmartSchool_WebAPI.Migrations
                 {
                     b.HasOne("SmartSchool_WebAPI.Models.Teacher", "Teacher")
                         .WithMany("Subjects")
-                        .HasForeignKey("TeacherId1");
+                        .HasForeignKey("TeacherId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
                 });
 #pragma warning restore 612, 618
         }

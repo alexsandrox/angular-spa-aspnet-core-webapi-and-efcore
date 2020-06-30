@@ -4,9 +4,9 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
-using SmartSchool_WebAPI.Data;
-using Microsoft.AspNetCore.Mvc.NewtonsoftJson;
 using Newtonsoft.Json.Serialization;
+using SmartSchool_WebAPI.Data;
+using SmartSchool_WebAPI.Repositories;
 
 namespace SmartSchool_WebAPI
 {

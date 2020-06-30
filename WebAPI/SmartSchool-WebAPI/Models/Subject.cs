@@ -5,7 +5,7 @@ namespace SmartSchool_WebAPI.Models
     public class Subject
     {
         protected Subject() { }
-        public Subject(int id, string name, string teacherId)
+        public Subject(int id, string name, int teacherId)
         {
             this.Id = id;
             this.Name = name;
@@ -14,7 +14,7 @@ namespace SmartSchool_WebAPI.Models
 
         public int Id { get; private set; }
         public string Name { get; private set; }
-        public string TeacherId { get; private set; }
+        public int TeacherId { get; private set; }
         public Teacher Teacher { get; private set; }
 
         // para fazer o relacionamento muitos para muitos

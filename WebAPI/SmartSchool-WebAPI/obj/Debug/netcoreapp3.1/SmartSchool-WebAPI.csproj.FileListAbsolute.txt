@@ -126,4 +126,3 @@ D:\Dev\Github-Projects\angular-spa-aspnet-core-webapi-and-efcore\WebAPI\SmartSch
 D:\Dev\Github-Projects\angular-spa-aspnet-core-webapi-and-efcore\WebAPI\SmartSchool-WebAPI\obj\Debug\netcoreapp3.1\SmartSchool-WebAPI.dll
 D:\Dev\Github-Projects\angular-spa-aspnet-core-webapi-and-efcore\WebAPI\SmartSchool-WebAPI\obj\Debug\netcoreapp3.1\SmartSchool-WebAPI.pdb
 D:\Dev\Github-Projects\angular-spa-aspnet-core-webapi-and-efcore\WebAPI\SmartSchool-WebAPI\obj\Debug\netcoreapp3.1\SmartSchool-WebAPI.genruntimeconfig.cache
-D:\Dev\Github-Projects\angular-spa-aspnet-core-webapi-and-efcore\WebAPI\SmartSchool-WebAPI\obj\Debug\netcoreapp3.1\SmartSchool-WebAPI.csprojAssemblyReference.cache
